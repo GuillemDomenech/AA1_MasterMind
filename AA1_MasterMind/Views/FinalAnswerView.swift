@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct FinalAnswerView: View {
-    let finalAnswer: FinalAnswerModel
+    @ObservedObject var finalAnswer: FinalAnswerModel
+    
     var body: some View {
         HStack {
             ForEach(0..<finalAnswer.colors.count) { i in

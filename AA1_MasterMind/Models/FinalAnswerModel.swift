@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-class FinalAnswerModel {
-    var colors = [Color("gray"), Color("gray"), Color("gray"), Color("gray")]
+class FinalAnswerModel: ObservableObject {
+    @Published var colors = [Color("gray"), Color("gray"), Color("gray"), Color("gray")]
     
     func setAnswer(col1: Int, col2: Int, col3: Int, col4: Int) {
         colors[0] = colEnumToCol[col1]

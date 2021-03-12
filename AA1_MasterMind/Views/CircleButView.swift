@@ -13,6 +13,7 @@ struct CircleBut: View {
     let color: Color
     let action: () -> Void
     let size: CGFloat
+    let disabled: Bool
     var body: some View {
         Button(action: {
                     action()
@@ -23,12 +24,13 @@ struct CircleBut: View {
                         .clipShape(Circle())
         }
         .padding(.horizontal, 5)
+        .disabled(disabled)
 
     }
 }
 
 struct CircleBut_Previews: PreviewProvider {
     static var previews: some View {
-        CircleBut(color: Color.red, action: {}, size: 50)
+        CircleBut(color: Color.red, action: {}, size: 50, disabled: false)
     }
 }

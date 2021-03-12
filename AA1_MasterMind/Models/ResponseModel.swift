@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-class ResponseModel {
-    var colors = [Color("gray"), Color("gray"), Color("gray"), Color("gray")]
+class ResponseModel: ObservableObject {
+    @Published var colors = [Color("gray"), Color("gray"), Color("gray"), Color("gray")]
     
     func setResponse(correctCol: Int, correctColAndPos: Int) {
         var correctCol = correctCol
@@ -17,11 +17,11 @@ class ResponseModel {
         
         for i in 0..<colors.count {
             if correctCol > 0 {
-                colors[i] = Color("ans_1")
+                self.colors[i] = Color("ans_1")
                 correctCol -= 1
             }
             else if correctColAndPos > 0 {
-                colors[i] = Color("ans_2")
+                self.colors[i] = Color("ans_2")
                 correctColAndPos -= 1
             }
         }

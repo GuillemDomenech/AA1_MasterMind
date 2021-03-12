@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ResponseView: View {
     
-    let responseModel: ResponseModel
+    @ObservedObject var responseModel: ResponseModel
     
     var body: some View {
         VStack {

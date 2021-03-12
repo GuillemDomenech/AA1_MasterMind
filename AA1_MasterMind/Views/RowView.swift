@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RowView: View {
     
-    var rowData: RowModel
+    @ObservedObject var rowData: RowModel
     
     private let size: CGFloat = 40.0
     
@@ -22,7 +22,7 @@ struct RowView: View {
                 .offset(x: -10)
                 .foregroundColor(.white)
             ForEach(0..<rowData.colors.count) { i in
-                CircleBut(color: rowData.colors[i] ?? Color("gray"), action: { action(i) }, size: size)
+                CircleBut(color: rowData.getColor(idx: i), action: { action(i) }, size: size, disabled: rowData.disabledStates[i])
             }
             
             ResponseView(responseModel: rowData.responseModel)

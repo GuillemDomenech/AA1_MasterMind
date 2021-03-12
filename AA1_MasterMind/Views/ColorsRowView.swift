@@ -14,7 +14,7 @@ struct ColorsRowView: View {
             ForEach(0..<colEnumToCol.count) { i in
                 CircleBut(color: colEnumToCol[i],
                           action: { action(i) },
-                          size: 50)
+                          size: 50, disabled: false)
             }
         }
     }
