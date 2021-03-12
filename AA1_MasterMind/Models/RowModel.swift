@@ -41,4 +41,9 @@ class RowModel: ObservableObject {
         }
     }
     
+    func resetColors() {
+        colors = [nil, nil, nil, nil]
+        responseModel.resetColors()
+    }
+    
 }

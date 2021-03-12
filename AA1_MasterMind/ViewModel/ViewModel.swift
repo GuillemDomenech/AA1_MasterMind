@@ -158,7 +158,17 @@ class ViewModel: ObservableObject {
     }
     
     func RestartGame() {
+        for row in rowsList {
+            row.resetColors()
+        }
+        finalAnswer.resetColors()
         
+        gameWon = false
+        currRowIdx = 0
+        currColSelected = nil
+        
+        DisableAllRowsButtons()
+        StartGame()
     }
     
 }

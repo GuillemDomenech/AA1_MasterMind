@@ -31,4 +31,7 @@ class ResponseModel: ObservableObject {
         print(colors)
     }
     
+    func resetColors() {
+        colors = [Color("gray"), Color("gray"), Color("gray"), Color("gray")]
+    }
 }

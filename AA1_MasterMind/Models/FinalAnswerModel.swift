@@ -17,4 +17,8 @@ class FinalAnswerModel: ObservableObject {
         colors[2] = colEnumToCol[col3]
         colors[3] = colEnumToCol[col4]
     }
+    
+    func resetColors() {
+        colors = [Color("gray"), Color("gray"), Color("gray"), Color("gray")]
+    }
 }
