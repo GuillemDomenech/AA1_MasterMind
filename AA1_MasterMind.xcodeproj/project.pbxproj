@@ -16,6 +16,11 @@
 		34A151F725F950CC00AB0EC2 /* RowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A151F625F950CC00AB0EC2 /* RowModel.swift */; };
 		34A151FD25F953C400AB0EC2 /* ResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A151FC25F953C400AB0EC2 /* ResponseView.swift */; };
 		34A1520025F955C700AB0EC2 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A151FF25F955C700AB0EC2 /* ResponseModel.swift */; };
+		34B901FE25FAE7D9002B1D6C /* ColorsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B901FD25FAE7D9002B1D6C /* ColorsRowView.swift */; };
+		34B9020125FAE805002B1D6C /* CircleButView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B9020025FAE805002B1D6C /* CircleButView.swift */; };
+		34B9020425FAE891002B1D6C /* ColorsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B9020325FAE891002B1D6C /* ColorsInfo.swift */; };
+		34B9020725FAEC7C002B1D6C /* FinalAnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B9020625FAEC7C002B1D6C /* FinalAnswerModel.swift */; };
+		34B9020A25FAED84002B1D6C /* FinalAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B9020925FAED84002B1D6C /* FinalAnswerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		34A151F625F950CC00AB0EC2 /* RowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowModel.swift; sourceTree = "<group>"; };
 		34A151FC25F953C400AB0EC2 /* ResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseView.swift; sourceTree = "<group>"; };
 		34A151FF25F955C700AB0EC2 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		34B901FD25FAE7D9002B1D6C /* ColorsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsRowView.swift; sourceTree = "<group>"; };
+		34B9020025FAE805002B1D6C /* CircleButView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButView.swift; sourceTree = "<group>"; };
+		34B9020325FAE891002B1D6C /* ColorsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsInfo.swift; sourceTree = "<group>"; };
+		34B9020625FAEC7C002B1D6C /* FinalAnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalAnswerModel.swift; sourceTree = "<group>"; };
+		34B9020925FAED84002B1D6C /* FinalAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalAnswerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,8 @@
 			children = (
 				34A151F625F950CC00AB0EC2 /* RowModel.swift */,
 				34A151FF25F955C700AB0EC2 /* ResponseModel.swift */,
+				34B9020625FAEC7C002B1D6C /* FinalAnswerModel.swift */,
+				34B9020325FAE891002B1D6C /* ColorsInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,6 +108,9 @@
 				3471044625F80058001DC908 /* RowView.swift */,
 				3462FE1D25F7EF0300C774FE /* ContentView.swift */,
 				34A151FC25F953C400AB0EC2 /* ResponseView.swift */,
+				34B901FD25FAE7D9002B1D6C /* ColorsRowView.swift */,
+				34B9020025FAE805002B1D6C /* CircleButView.swift */,
+				34B9020925FAED84002B1D6C /* FinalAnswerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,12 +193,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3462FE1E25F7EF0300C774FE /* ContentView.swift in Sources */,
+				34B9020A25FAED84002B1D6C /* FinalAnswerView.swift in Sources */,
+				34B9020725FAEC7C002B1D6C /* FinalAnswerModel.swift in Sources */,
 				34A151FD25F953C400AB0EC2 /* ResponseView.swift in Sources */,
 				3462FE2C25F7EF4F00C774FE /* ViewModel.swift in Sources */,
+				34B901FE25FAE7D9002B1D6C /* ColorsRowView.swift in Sources */,
 				3462FE1C25F7EF0300C774FE /* AA1_MasterMindApp.swift in Sources */,
+				34B9020125FAE805002B1D6C /* CircleButView.swift in Sources */,
 				34A151F725F950CC00AB0EC2 /* RowModel.swift in Sources */,
 				34A1520025F955C700AB0EC2 /* ResponseModel.swift in Sources */,
 				3471044725F80058001DC908 /* RowView.swift in Sources */,
+				34B9020425FAE891002B1D6C /* ColorsInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

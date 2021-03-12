@@ -23,9 +23,27 @@ struct ContentView: View {
                 .ignoresSafeArea(.all)
             
             VStack {
-                Text("MasterMind")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
+                ZStack {
+                    Text("MasterMind")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                    Button(action: {
+                        viewModel.RestartGame()
+                    }, label: {
+                            Image(systemName: "arrow.counterclockwise")
+                                .font(.title)
+                                .accentColor(.white)
+                    })
+                    .offset(x: -150)
+                }
+                
+                VStack {
+                    Text("Solution: ")
+                        .foregroundColor(.white)
+                    FinalAnswerView(finalAnswer: viewModel.finalAnswer)
+                }
+                .padding(.vertical, 10)
+                
                 VStack {
                     ForEach(0..<viewModel.rowsList.count) { i in
                         let reversedIdx = viewModel.rowsList.count - 1 - i
@@ -38,15 +56,8 @@ struct ContentView: View {
                         )
                     }
                 }
-                Spacer()
-                HStack {
-                    
-                    Text("Tried 2 times")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.orange)
-                }
+                ColorsRowView(action: viewModel.colorButtonPressed)
+                    .padding(.vertical, 20)
             }
         }
         

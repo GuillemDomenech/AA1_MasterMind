@@ -9,10 +9,11 @@ import Foundation
 import SwiftUI
 
 struct RowModel {
-    var firstColor: Color = Color("gray")
-    var secondColor: Color = Color("gray")
-    var thirdColor: Color = Color("gray")
-    var fourthColor: Color = Color("gray")
+    var colors:[Color?] = [nil, nil, nil, nil]
+//    var firstColor: Color? //= Color("gray")
+//    var secondColor: Color? //= Color("gray")
+//    var thirdColor: Color? //= Color("gray")
+//    var fourthColor: Color? //= Color("gray")
     
     let responseModel: ResponseModel = ResponseModel()
     

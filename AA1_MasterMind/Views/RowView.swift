@@ -21,36 +21,18 @@ struct RowView: View {
                 .frame(width: 60)
                 .offset(x: -10)
                 .foregroundColor(.white)
-            CircleBut(color: rowData.firstColor, action: { action(0) }, size: size)
-            CircleBut(color: rowData.secondColor, action: { action(1) }, size: size)
-            CircleBut(color: rowData.thirdColor, action: { action(2) }, size: size)
-            CircleBut(color: rowData.fourthColor, action: { action(3) }, size: size)
-                .padding(.trailing, 40)
+            ForEach(0..<rowData.colors.count) { i in
+                CircleBut(color: rowData.colors[i] ?? Color("gray"), action: { action(i) }, size: size)
+            }
             
             ResponseView(responseModel: rowData.responseModel)
+                .padding(.leading, 40)
         }
         
     }
     
     func viewDidLoad() {
         
-    }
-}
-
-struct CircleBut: View {
-    let color: Color
-    let action: () -> Void
-    let size: CGFloat
-    var body: some View {
-        Button(action: {
-                    action()
-                    }) {
-                    Text("")
-                        .frame(width: size, height: size)
-                        .background(color)
-                        .clipShape(Circle())
-        }
-
     }
 }
 
