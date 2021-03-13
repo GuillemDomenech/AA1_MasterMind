@@ -59,6 +59,36 @@ struct ContentView: View {
                 ColorsRowView(action: viewModel.colorButtonPressed)
                     .padding(.vertical, 20)
             }
+            
+            if viewModel.showWelcomePopUp {
+                HStack {
+                    Spacer()
+                    VStack {
+                        Spacer()
+                        WelcomeView(show: $viewModel.showWelcomePopUp)
+                            .offset(y: -150)
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .background(Color.black.opacity(0.65))
+                .zIndex(2)
+            }
+            
+            if viewModel.showResultsPopUp {
+                HStack {
+                    Spacer()
+                    VStack {
+                        Spacer()
+                        ResultsView(show: $viewModel.showResultsPopUp, gameWon: $viewModel.gameWon, action: viewModel.RestartGame)
+                            .offset(y: -150)
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .background(Color.black.opacity(0.65))
+                .zIndex(3)
+            }
         }
         
     }

@@ -18,6 +18,10 @@ class ViewModel: ObservableObject {
     
     var gameWon = false
     
+    @Published var showWelcomePopUp = true
+    
+    @Published var showResultsPopUp = false
+    
      @Published var rowsList: [RowModel] = [
         RowModel(rowIndex: 1),
         RowModel(rowIndex: 2),
@@ -110,9 +114,16 @@ class ViewModel: ObservableObject {
                 if gameWon {
                     print("You won the game!")
                     showAnswer()
+                    withAnimation {
+                        showResultsPopUp = true
+                    }
                 }
                 else {
                     print("You lost the game :(")
+                    showAnswer()
+                    withAnimation {
+                        showResultsPopUp = true
+                    }
                 }
             }
         }
@@ -122,18 +133,42 @@ class ViewModel: ObservableObject {
         var correctCol = 0
         var correctColAndPos = 0
         
+        var colCountAnswer: [Int:Int] = [:]
+        
+        // Count how many appearances of each color in the answer
+        for i in 0...answer.count-1 {
+            let colIdx = answer[i]
+            if let colIdxCount = colCountAnswer[colIdx] {
+                colCountAnswer.updateValue(colIdxCount+1, forKey: colIdx)
+            }
+            else {
+                colCountAnswer.updateValue(1, forKey: colIdx)
+            }
+        }
+        
+        var colCountInput: [Int:Int] = [:]
+        
         for i in 0...rowsList[currRowIdx].colors.count-1 {
-            let currCol = rowsList[currRowIdx].colors[i]
-            let answerCol = answer[i]
+            let currCol: Int = rowsList[currRowIdx].colors[i]!
+            let answerCol: Int = answer[i]
+            
             
             if currCol == answerCol {
+                let currColCount: Int = colCountInput[currCol] ?? 0
+                colCountInput.updateValue(currColCount+1, forKey: currCol)
+                
                 correctColAndPos += 1
                 continue
             }
             else {
                 for colAns in answer {
-                    if colAns == currCol {
+                    let currColCount: Int = colCountInput[currCol] ?? 0
+                    let currAnsColCount: Int = colCountAnswer[currCol] ?? 0
+                    
+                    if colAns == currCol && currColCount < currAnsColCount {
                         correctCol += 1
+                        
+                        colCountInput.updateValue(currColCount+1, forKey: currCol)
                         break
                     }
                 }
@@ -169,6 +204,9 @@ class ViewModel: ObservableObject {
         
         DisableAllRowsButtons()
         StartGame()
-    }
-    
+        
+        withAnimation {
+            showResultsPopUp = false
+        }
+    }    
 }
